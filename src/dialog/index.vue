@@ -1,5 +1,5 @@
 <template>
-    <div v-if="show" class="vui-dialog__mask">
+    <div v-if="show" class="vui-dialog-mask">
 
       <div class="vui-dialog" :style="'width:' + width + ';'">
         <!-- header -->
@@ -68,6 +68,20 @@
 <style lang="less">
   @primary-color: #333;
   @padding: 30px;
+  
+  .vui-dialog-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgba(255,255,255,.4);
+    display: flex;
+    justify-content: center;
+  }
 
   .vui-dialog {
     position: absolute;
@@ -78,20 +92,6 @@
     background-color: #fff;
     box-shadow: 2px 2px 45px -6px rgba(0,0,0,.1);
     border-radius: 3px;
-
-    &__mask {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      width: 100%;
-      height: 100%;
-      overflow-y: auto;
-      background-color: rgba(255,255,255,.4);
-      display: flex;
-      justify-content: center;
-    }
 
     &__header {
       padding: @padding @padding 10px;
